@@ -36,16 +36,13 @@ func Load() *Config {
 	cfg := &Config{
 		Env:        getEnv("ENV", "dev"),
 		ServerPort: getEnv("SERVER_PORT", "8080"),
-		DBUrl:         getEnv("DB_URL", "postgres://auth:auth@localhost:5432/fintechdb_auth"),
+		DBUrl:         getEnv("DB_URL", "postgres://auth:auth@localhost:5432/prepaiddb_auth"),
 		RedisUrl:      getEnv("REDIS_URL", "localhost:6379"),
 		JWTSecret:     getEnv("JWT_SECRET", "supersecretkey"),
 		SMTPHost:      getEnv("SMTP_HOST", ""),
 		SMTPPort:      getEnv("SMTP_PORT", "587"),
 		SMTPUser:      getEnv("SMTP_USER", ""),
 		SMTPPassword:  getEnv("SMTP_PASSWORD", ""),
-		GoogleClientID:   getEnv("GOOGLE_CLIENT_ID", ""),
-		GoogleClientSecret: getEnv("GOOGLE_CLIENT_SECRET", ""),
-		GoogleRedirectURL: getEnv("GOOGLE_REDIRECT_URL", "http://localhost:8080/api/v1/auth/google/callback"),
 	}
 
 	fmt.Println("Loaded environment:", cfg.Env)
