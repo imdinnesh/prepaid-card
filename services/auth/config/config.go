@@ -17,9 +17,6 @@ type Config struct {
 	SMTPPort      string
 	SMTPUser      string
 	SMTPPassword  string
-	GoogleClientID   string
-	GoogleClientSecret string
-	GoogleRedirectURL string
 }
 
 func Load() *Config {
